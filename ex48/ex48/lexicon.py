@@ -8,7 +8,12 @@ def scan(input):
       item = ('verb', word)
     elif word == 'the' or word == 'in' or word == 'of':
       item = ('stop', word)
-    else:
+    elif word == 'bear' or word == 'princess':
       item = ('noun', word)
+    else:
+      try:
+        item = ('number', int(word))
+      except ValueError:
+        return None
     sentence.append(item)
   return sentence
