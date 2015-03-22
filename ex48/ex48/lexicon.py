@@ -14,6 +14,6 @@ def scan(input):
       try:
         item = ('number', int(word))
       except ValueError:
-        return None
+        item = ('error', word)
     sentence.append(item)
   return sentence
